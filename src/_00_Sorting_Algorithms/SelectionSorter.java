@@ -8,10 +8,21 @@ public class SelectionSorter extends Sorter {
 	//  You can use display.updateDisplay() to show the current
 	//   progress on the graph.
 	@Override
-	void sort(int[] array, SortingVisualizer display) {
+	void sort(int[] arr, SortingVisualizer display) {
 		//1. make a for loop to iterate through all but the last 
 		//   element of the array
-		
+		for(int i = 0; i < arr.length-1; i++) {
+			int index = i;
+			for(int j = i+1; j < arr.length; j++) {
+				if(arr[j]<arr[index]) {
+					index = j;
+				}
+			}
+			int temp = arr[index];
+			arr[index] = arr[i];
+			arr[i] = temp;
+			display.updateDisplay();
+		}
 			//2. create an integer called index and set it equal to i
 			
 			//3. make another for loop that starts at i + 1 and

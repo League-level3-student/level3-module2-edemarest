@@ -23,7 +23,7 @@ public class InsertionSorter extends Sorter {
 		}
 		//1. make a for loop that starts at 1 and goes through 
 		// the length of the array 
-
+			
 			//2. make another for loop that starts at i and counts down
         	//   while j is greater than 0
 

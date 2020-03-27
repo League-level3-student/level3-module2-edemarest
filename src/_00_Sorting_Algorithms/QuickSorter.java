@@ -24,7 +24,7 @@ public class QuickSorter extends Sorter {
        int j = high;
         //3. create an integer called pivot and set it equal to the element
         //   in the array that is the halfway point between low and high
-       int pivot = arr[(low+high)/2];
+       int pivot = arr[low+(high-low)/2];
        System.out.println(pivot);
         //4. make a while loop that goes while i is less than or equal to j
         while(i <= j) {
@@ -32,20 +32,21 @@ public class QuickSorter extends Sorter {
         	while(arr[i]<pivot) {
         		System.out.println("doing stuff");
         		i++;
-        		display.updateDisplay();
+        		//display.updateDisplay();
         	}
         	while(arr[j]>pivot) {
         		j--;
-        		display.updateDisplay();
+        		//display.updateDisplay();
         	}
         	if(i <= j) {
-        		int temp = i;
-        		i = j;
-        		j = temp;
+        		int temp = arr[i];
+        		arr[i] = arr[j];
+        		arr[j] = temp;
         		i++;
         		j--;
-        		display.updateDisplay();
+        		
         	}
+        	display.updateDisplay();
         	if(low < j) {
         		quickSort(arr, low, j, display);
         		display.updateDisplay();

@@ -41,7 +41,7 @@ public class HeapSorter extends Sorter {
         	//11. swap the array elements at 0 and i.
  
             //12. call the heapSort method with i and 0
-        display.updateDisplay();
+        
 	}
 	
 	public void heapSort(int[] array, int n, int i, SortingVisualizer display) {
@@ -62,19 +62,19 @@ public class HeapSorter extends Sorter {
         //6. if r is less than n 
         //   and array element at r is greater than array element at largest
         //   then set largest equal to r
-        if(r < n&&array[r]>array[largest]) {
+        if(r < n && array[r]>array[largest]) {
         	largest = r;
         }
         if(largest!=i) {
         	int temp = array[i];
-        	array[i] = largest;
+        	array[i] = array[largest];
         	array[largest] = temp;
         	heapSort(array, n, largest, display);
         }
         //7. if largest is not equal to i
         //   then swap the array elements at i and largest.
         //   Also, call the heapSort method with n and largest
-        
+        //display.updateDisplay();
 	}
 
 }

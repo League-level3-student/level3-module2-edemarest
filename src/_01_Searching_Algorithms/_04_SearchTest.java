@@ -28,6 +28,8 @@ class _04_SearchTest {
 		//   remember that the array must be sorted
 		int[] ints = {1, 2, 3, 4, 5};
 		assertEquals(1, _01_BinarySearch.binarySearch(ints, 0, 4, 2));
+		assertEquals(-1, _01_BinarySearch.binarySearch(ints, 0, 4, 17));
+		assertEquals(3, _01_BinarySearch.binarySearch(ints, 0, 4, 4));
 		//System.out.println(_01_BinarySearch.binarySearch(ints, 0, 4, 2));
 	}
 	
@@ -37,12 +39,18 @@ class _04_SearchTest {
 		//   remember that the array must be sorted and evenly distributed
 		int[] ints = {10, 20, 30, 40, 50};
 		assertEquals(2, _02_InterpolationSearch.interpolationSearch(ints, 30));
-		System.out.println(_02_InterpolationSearch.interpolationSearch(ints, 30));
+		assertEquals(-1, _02_InterpolationSearch.interpolationSearch(ints, 33));
+		assertEquals(4, _02_InterpolationSearch.interpolationSearch(ints, 50));
+		
 	}
 	
 	@Test
 	public void testExponentialSearch() {
 		//4. use the assertEquals method to test your exponential search method.
 		//   remember that the array must be sorted
+		int[] ints = {1, 2, 3, 4, 5};
+		assertEquals(3, _03_ExponentialSearch.exponentialSearch(ints, 4));
+		assertEquals(0, _03_ExponentialSearch.exponentialSearch(ints, 1));
+		assertEquals(4, _03_ExponentialSearch.exponentialSearch(ints, 5));
 	}
 }

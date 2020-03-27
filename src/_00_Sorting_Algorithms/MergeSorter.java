@@ -22,7 +22,11 @@ public class MergeSorter extends Sorter {
 		//2. make an if statement that checks if low is less than high
 		//   and put the rest of the method inside of it
 		if(low < high) {
-			int mid = (low+high)/2;
+			//3. Create an integer called middle and set it 
+			//   equal to the half way point between low and high
+            
+			int mid = low+(high-low)/2;
+			//4. call the mergeSort method with low and middle
 			mergeSort(arr, low, mid, display);
 			mergeSort(arr, mid+1, high, display);
 			for(int i = low; i <= high; i++) {
@@ -45,21 +49,22 @@ public class MergeSorter extends Sorter {
 					j++;
 				}
 				k++;
+				display.updateDisplay();
 				while(i <= mid) {
 					arr[k] = tempa[i];
 					k++;
+					
 					i++;
+					display.updateDisplay();
 				}
 			}
 			
 			
 				
-			display.updateDisplay();
+			
 		}
-			//3. Create an integer called middle and set it 
-			//   equal to the half way point between low and high
+			
             
-            //4. call the mergeSort method with low and middle
            
             //5. call the mergeSort method with middle + 1 and high
             
